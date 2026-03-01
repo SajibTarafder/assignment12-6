@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- logo and title  -->
+    <title>SwiftCart E-Commerce</title> 
+ <link rel="shortcut icon" href="/Assets/p5.png" type="image/x-icon">
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Daisy ui -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<!-- font integration -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<!-- stylesheet -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <!-- navbar -->
+    <header>
+       <div class="navbar bg-base-100 shadow-sm lg:px-30">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class=" lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content  mt-3 w-52 p-2 ">
+      
+  <li><a onclick="showHome()">Home</a></li>
+  <li><a onclick="showProducts()">Products</a></li>
+        <li><a>About</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+    <a class="text-2xl font-semibold text-blue-600">SwiftCart</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+   <ul class="menu menu-horizontal px-1">
+  <li><a onclick="showHome()">Home</a></li>
+  <li><a onclick="showProducts()">Products</a></li>
+  <li><a>About</a></li>
+  <li><a>Contact</a></li>
+</ul>
+  </div>
+   <!-- RIGHT → Cart Icon -->
+  <div class="navbar-end">
+    <button class="btn btn-ghost relative">
+      <i class="fa-solid fa-cart-shopping text-xl"></i>
+
+      <!-- cart count badge -->
+  <span id="cart-count" class="badge badge-primary badge-sm absolute -top-2 -right-2">
+  0
+</span>
+    </button>
+  </div>
+
+</div>
+</header>
+<section id="home">
+<!-- Banner Section -->
+<section>
+  <div class="hero min-h-screen relative"
+       style="background-image:url('./Assets/banner-image.png');">
+
+    <!-- Overlay -->
+    <div class="hero-overlay bg-black/60"></div>
+
+    <!-- Content -->
+    <div class="hero-content w-full flex justify-start items-center text-white px-6 md:px-16">
+      <div class="max-w-xl">
+        
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          Best Collection For You
+        </h1>
+
+        <p class="mb-6 text-gray-200 text-lg">
+          Discover the latest trends in fashion, electronics and more.Shop with confidence and style at SwithCard
+        </p>
+
+        <button class="btn btn-primary px-8 text-lg">
+          Shop Now
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--Why Choose Us  -->
+
+  <section class="bg-slate-100 py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4">
+        Why Choose Us
+      </h2>
+      <p class="text-blue-950 text-lg">
+        We provide the best shopping experience with top-notch services
+      </p>
+    </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+  <!-- Card 1-->
+  <div class="card bg-base-100 shadow-lg p-6 relative hover:shadow-2xl transition duration-300">
+    <div class="card-body p-0">
+
+      <!-- Icon -->
+      <div class="w-14 h-14 flex items-center justify-center 
+                  bg-blue-100 rounded-lg absolute -top-7 left-6">
+        <i class="fa-solid fa-truck text-2xl text-purple-600"></i>
+      </div>
+
+      <h2 class="card-title text-xl font-bold mt-10">
+        Fast Delivery
+      </h2>
+
+      <p class="text-gray-600">
+        Get your products delivered quickly and safely at your doorstep.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Card 2-->
+  <div class="card bg-base-100 shadow-lg p-6 relative hover:shadow-2xl transition duration-300">
+    <div class="card-body p-0">
+
+      <div class="w-14 h-14 flex items-center justify-center 
+                  bg-green-100 rounded-lg absolute -top-7 left-6">
+        <i class="fa-solid fa-shield-halved text-2xl text-purple-600"></i>
+      </div>
+
+      <h2 class="card-title text-xl font-bold mt-10">
+        Secure Payment
+      </h2>
+
+      <p class="text-gray-600">
+        Your payment information is processed securely.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Card 3-->
+  <div class="card bg-base-100 shadow-lg p-6 relative hover:shadow-2xl transition duration-300">
+    <div class="card-body p-0">
+
+      <div class="w-14 h-14 flex items-center justify-center 
+                  bg-purple-100 rounded-lg absolute -top-7 left-6">
+        <i class="fa-solid fa-headset text-2xl text-purple-600"></i>
+      </div>
+
+      <h2 class="card-title text-xl font-bold mt-10">
+        24/7 Support
+      </h2>
+
+      <p class="text-gray-600">
+        Our support team is always ready to assist you.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Card 4-->
+  <div class="card bg-base-100 shadow-lg p-6 relative hover:shadow-2xl transition duration-300">
+    <div class="card-body p-0">
+
+      <div class="w-14 h-14 flex items-center justify-center 
+                  bg-orange-100 rounded-lg absolute -top-7 left-6">
+        <i class="fa-solid fa-rotate-left text-2xl text-purple-600"></i>
+      </div>
+
+      <h2 class="card-title text-xl font-bold mt-10">
+        Easy Return
+      </h2>
+
+      <p class="text-gray-600">
+        Hassle-free return policy within 7 days.
+      </p>
+
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section>
+<!-- tridding now -->
+<section class="max-w-6xl mx-auto p-6">
+   <div >
+  <h1 class="text-4xl font-bold my-10">Tridding Now</h1>
+ </div>
+ <!-- card -->
+ <div id="trending-container" class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+
+  
+  </div>
+
+</section>
+
+</section>
+<!-- product section page -->
+<section id="products" class="hidden max-w-6xl mx-auto p-6">
+   <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4">
+        Our Products
+      </h2>
+      
+          <div id="level-container" class="flex gap-4 flex-wrap justify-center"></div>
+      
+    </div>
+    <div>
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+
+  
+  </div>
+    </div>
+  
+
+</section>
+
+<!-- model details -->
+<dialog id="product_modal" class="modal">
+  <div class="modal-box">
+    
+    <div id="modal-content"></div>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">Close</button>
+      </form>
+    </div>
+
+  </div>
+</dialog>
+
+<!-- Footer Section -->
+<footer class="bg-black text-gray-300 py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+
+ 
+  <div class=" grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+    <!-- Quick Links -->
+    <div>
+      <h6 class="text-blue-300 font-bold text-2xl mb-3">SwifitCard</h6>
+      <p class="text-sm text-gray-600">A card component has a figure, a body part Our support team is always ready to assist you.</p>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h6 class="text-white font-bold mb-3">Services</h6>
+      <a href="#" class="link link-hover block text-gray-600">Branding</a>
+      <a href="#" class="link link-hover block text-gray-600">Design</a>
+      <a href="#" class="link link-hover block text-gray-600">Marketing</a>
+      <a href="#" class="link link-hover block text-gray-600">Advertisement</a>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h6 class="text-white font-bold mb-3">Company</h6>
+      <a href="#" class="link link-hover block text-gray-600">About us</a>
+      <a href="#" class="link link-hover block text-gray-600">Contact</a>
+      <a href="#" class="link link-hover block text-gray-600">Jobs</a>
+      <a href="#" class="link link-hover block text-gray-600">Press kit</a>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+     
+    <h2 class="text-white font-bold mb-3">Subscribe to our Newsletter</h2>
+    <p class="text-gray-600 text-sm mb-6">
+      Stay updated with the latest products, offers, and discounts.
+    </p>
+    <form class="flex flex-col sm:flex-row  gap-4">
+      <input 
+        type="email" 
+        placeholder="Enter your email" 
+        class="input input-bordered w-full sm:w-80 text-gray-600" 
+        required />
+      <button class="btn btn-primary w-full sm:w-auto">
+        Subscribe
+      </button>
+    </form>
+  
+    </div>
+
+  </div>
+  <hr class="mt-8">
+ <div class="flex flex-col-reverse sm:flex-row justify-between mt-10 text-gray-500 items-center gap-4">
+  <!-- Copyright text -->
+  <h2 class="text-sm">
+    © 2026 SwiftCart. All rights reserved.
+  </h2>
+
+  <!-- Social icons -->
+  <div class="flex gap-3">
+    <i class="fa-brands fa-facebook hover:text-blue-500 transition"></i>
+    <i class="fa-brands fa-twitter hover:text-blue-500 transition"></i>
+    <i class="fa-brands fa-instagram hover:text-blue-500 transition"></i>
+    <i class="fa-brands fa-linkedin hover:text-blue-500 transition"></i>
+    <i class="fa-regular fa-envelope hover:text-blue-500 transition"></i>
+  </div>
+</div>
+</div>
+</footer>
+  <script src="./style/index.js"></script>
+
+  <!-- home page and product page show/hidden  -->
+  <script>
+    const homeSection = document.getElementById("home");
+const productsSection = document.getElementById("products");
+
+function showHome() {
+  homeSection.classList.remove("hidden");
+  productsSection.classList.add("hidden");
+}
+
+function showProducts() {
+  homeSection.classList.add("hidden");
+  productsSection.classList.remove("hidden");
+}
+  </script>
+</body>
+</html>
